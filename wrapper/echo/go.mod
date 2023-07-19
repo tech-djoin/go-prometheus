@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/labstack/echo/v4 v4.11.1
-	github.com/tech-djoin/go-prometheus v0.1.1
+	github.com/tech-djoin/go-prometheus v0.3.0
 )
 
 require (

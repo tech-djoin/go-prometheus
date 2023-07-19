@@ -7,9 +7,9 @@ import (
 	goprometheus "github.com/tech-djoin/go-prometheus"
 )
 
-// MetricCollector is a middleware function for collecting metrics in an Echo framework application.
+// MetricCollector is a middleware function for collecting metrics in an Gin framework application.
 //
-// This function returns a middleware function that wraps the next handler function in the Echo
+// This function returns a middleware function that wraps the next handler function in the Gin
 // framework's middleware chain. It measures the time taken to process the request and records
 // relevant metrics including the HTTP request and latency.
 func MetricCollector() gin.HandlerFunc {
