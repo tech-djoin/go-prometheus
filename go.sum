@@ -17,8 +17,6 @@ github.com/gin-contrib/sse v0.1.0 h1:Y/yl/+YNO8GZSjAhjMsSuLt29uWRFHdHYUb5lYOV9qE
 github.com/gin-contrib/sse v0.1.0/go.mod h1:RHrZQHXnP2xjPF+u1gW/2HnVO7nvIa9PG3Gm+fLHvGI=
 github.com/gin-gonic/gin v1.9.1 h1:4idEAncQnU5cB7BeOkPtxjfCSye0AAm1R0RVIqJ+Jmg=
 github.com/gin-gonic/gin v1.9.1/go.mod h1:hPrL7YrpYKXt5YId3A/Tnip5kqbEAP+KLuI3SUcPTeU=
-github.com/go-chi/chi v1.5.5 h1:vOB/HbEMt9QqBqErz07QehcOKHaWFtuj87tTDVz2qXE=
-github.com/go-chi/chi v1.5.5/go.mod h1:C9JqLr3tIYjDOZpzn+BCuxY8z8vmca43EeMgyZt7irw=
 github.com/go-chi/chi/v5 v5.0.10 h1:rLz5avzKpjqxrYwXNfmjkrYYXOyLJd37pz53UFHC6vk=
 github.com/go-chi/chi/v5 v5.0.10/go.mod h1:DslCQbL2OYiznFReuXYUmQ2hGd1aDpCnlMNITLSKoi8=
 github.com/go-playground/assert/v2 v2.2.0 h1:JvknZsQTYeFEAhQwI4qEt9cyV5ONwRHC+lYKSsYSR8s=
@@ -92,6 +90,8 @@ github.com/tech-djoin/go-prometheus/wrapper/echo v0.0.0-20230719021414-8d2293a40
 github.com/tech-djoin/go-prometheus/wrapper/echo v0.0.0-20230719021414-8d2293a40ba6/go.mod h1:rdNuexHpO9Rrhh3v8fefZTT1R6J7TyJ6ur/ogHssMgI=
 github.com/tech-djoin/go-prometheus/wrapper/gin v0.0.0-20230719024341-82e4c04504bb h1:fLsgaroJjr1x88BNyuzDZsS7OAGy+y0JEE3WUIhBs94=
 github.com/tech-djoin/go-prometheus/wrapper/gin v0.0.0-20230719024341-82e4c04504bb/go.mod h1:p/mkG4k7qt8iQNe2dcTBLdmRZPO8eNI24AIbToDViGk=
+github.com/tech-djoin/go-prometheus/wrapper/http v0.0.0-20230918053942-c8e4ddefd7ba h1:l74I+TqbNF5rT6lBfobnnt9KuXPjDigmNIuMyCzLlsI=
+github.com/tech-djoin/go-prometheus/wrapper/http v0.0.0-20230918053942-c8e4ddefd7ba/go.mod h1:G/HtB4aPWJID3cAkrJ1EUSt3nJI746OHBaCnIhLmQsY=
 github.com/twitchyliquid64/golang-asm v0.15.1 h1:SU5vSMR7hnwNxj24w34ZyCi/FmDZTkS4MhqMhdFk5YI=
 github.com/twitchyliquid64/golang-asm v0.15.1/go.mod h1:a1lVb/DtPvCB8fslRZhAngC2+aY1QWCk3Cedj/Gdt08=
 github.com/ugorji/go/codec v1.2.11 h1:BMaWp1Bb6fHwEtbplGBGJ498wD+LKlNSl25MjdZY4dU=

@@ -3,10 +3,12 @@ module github.com/tech-djoin/go-prometheus
 go 1.19
 
 require (
+	github.com/go-chi/chi/v5 v5.0.10
 	github.com/labstack/echo/v4 v4.11.1
 	github.com/prometheus/client_golang v1.16.0
 	github.com/tech-djoin/go-prometheus/wrapper/echo v0.0.0-20230719021414-8d2293a40ba6
 	github.com/tech-djoin/go-prometheus/wrapper/gin v0.0.0-20230719024341-82e4c04504bb
+	github.com/tech-djoin/go-prometheus/wrapper/http v0.0.0-20230918053942-c8e4ddefd7ba
 )
 
 require (
@@ -14,8 +16,6 @@ require (
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
-	github.com/go-chi/chi v1.5.5 // indirect
-	github.com/go-chi/chi/v5 v5.0.10 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.14.0 // indirect
