@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	github.com/labstack/echo/v4 v4.11.1
+	github.com/prometheus/client_golang v1.16.0
 	github.com/tech-djoin/go-prometheus v0.3.0
 )
 
@@ -15,7 +16,6 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
-	github.com/prometheus/client_golang v1.16.0 // indirect
 	github.com/prometheus/client_model v0.4.0 // indirect
 	github.com/prometheus/common v0.44.0 // indirect
 	github.com/prometheus/procfs v0.11.0 // indirect
