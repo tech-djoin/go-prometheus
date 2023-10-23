@@ -25,7 +25,7 @@ func MetricCollector(next http.Handler) http.Handler {
 		// initialize params struct
 		prometheus := goprometheus.Prometheus{
 			Method:    r.Method,
-			Path:      r.RequestURI,
+			Path:      r.URL.Path,
 			Code:      rw.status,
 			StartTime: start,
 		}
