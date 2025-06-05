@@ -8,7 +8,7 @@ require (
 	github.com/prometheus/client_golang v1.16.0
 	github.com/tech-djoin/go-prometheus/wrapper/echo v0.0.0-20230719021414-8d2293a40ba6
 	github.com/tech-djoin/go-prometheus/wrapper/gin v0.0.0-20230719024341-82e4c04504bb
-	github.com/tech-djoin/go-prometheus/wrapper/http v0.0.0-20230918053942-c8e4ddefd7ba
+	github.com/tech-djoin/go-prometheus/wrapper/http v0.0.0-20250605103634-56c0aaeb9e7f
 )
 
 require (

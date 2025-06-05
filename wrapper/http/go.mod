@@ -2,7 +2,7 @@ module github.com/tech-djoin/go-prometheus/wrapper/http
 
 go 1.19
 
-require github.com/tech-djoin/go-prometheus v0.3.0
+require github.com/tech-djoin/go-prometheus v0.3.4
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
