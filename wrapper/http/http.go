@@ -2,6 +2,7 @@ package http
 
 import (
 	"net/http"
+	"strings"
 	"time"
 
 	goprometheus "github.com/tech-djoin/go-prometheus"
@@ -22,10 +23,12 @@ func MetricCollector(next http.Handler) http.Handler {
 		// Serve the next handler
 		next.ServeHTTP(rw, r)
 
+		cleanPath := strings.Split(r.URL.Path, "?")[0]
+
 		// initialize params struct
 		prometheus := goprometheus.Prometheus{
 			Method:    r.Method,
-			Path:      r.URL.Path,
+			Path:      cleanPath,
 			Code:      rw.status,
 			StartTime: start,
 		}
