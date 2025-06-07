@@ -1,7 +1,7 @@
 package fiber
 
 import (
-	"fmt"
+	"strings"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
@@ -18,8 +18,7 @@ func MetricCollector() fiber.Handler {
 
 		// copy safe by this issue
 		// https://github.com/prometheus/client_golang/issues/1429#issuecomment-1925737336
-		method := fmt.Sprintf("%s", c.Method())
-		path := fmt.Sprintf("%s", c.Route().Path)
+		method := strings.Clone(c.Method())
 
 		// Proceed with the next handler
 		err := c.Next()
@@ -27,7 +26,7 @@ func MetricCollector() fiber.Handler {
 		// initialize params struct
 		prometheus := goprometheus.Prometheus{
 			Method:    method,
-			Path:      path,
+			Path:      c.Route().Path,
 			Code:      c.Response().StatusCode(),
 			StartTime: start,
 		}
