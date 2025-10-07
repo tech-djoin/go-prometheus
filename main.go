@@ -18,6 +18,10 @@ type Prometheus struct {
 
 // Prometheus Metric
 var (
+	// DefaultLatencyBuckets are used for latency histograms when no custom bucket
+	// configuration is provided.
+	DefaultLatencyBuckets = []float64{0.1, 0.3, 0.5, 0.7, 0.9}
+
 	// appHttpRequest is a counter metric to record total number of application request
 	// with labels of method, path, and code
 	appHttpRequest = promauto.NewCounterVec(prometheus.CounterOpts{
@@ -33,11 +37,22 @@ var (
 			Name: "app_http_request_latency_seconds",
 			Help: "Latency of HTTP requests.",
 			// Define the desired histogram buckets.
-			Buckets: []float64{0.1, 0.3, 0.5, 0.7, 0.9},
+			Buckets: DefaultLatencyBuckets,
 		},
 		[]string{"method", "path"},
 	)
 )
+
+// prometheusBackend persists metrics into the default in-memory Prometheus registry.
+type prometheusBackend struct{}
+
+func (prometheusBackend) RecordHttpRequest(method string, path string, code int) {
+	appHttpRequest.WithLabelValues(method, path, strconv.Itoa(code)).Inc()
+}
+
+func (prometheusBackend) RecordLatency(method string, path string, elapsedSeconds float64) {
+	appHttpLatency.WithLabelValues(method, path).Observe(elapsedSeconds)
+}
 
 // RecordHttpRequest records an HTTP request.
 //
@@ -45,7 +60,7 @@ var (
 // as input parameters. It increments the appHttpRequest metric with the provided
 // method, path, and code labels.
 func RecordHttpRequest(method string, path string, code int) {
-	appHttpRequest.WithLabelValues(method, path, strconv.Itoa(code)).Inc()
+	currentBackend().RecordHttpRequest(method, path, code)
 }
 
 // RecordLatency records the latency of an HTTP request.
@@ -55,7 +70,7 @@ func RecordHttpRequest(method string, path string, code int) {
 // and records the latency using the appHttpLatency metric.
 func RecordLatency(method string, path string, start time.Time) {
 	elapsed := time.Since(start).Seconds()
-	appHttpLatency.WithLabelValues(method, path).Observe(elapsed)
+	currentBackend().RecordLatency(method, path, elapsed)
 }
 
 // RecordMetric is a function that records all metric
