@@ -69,13 +69,13 @@ func NewRedisBackend(opts RedisBackendOptions) (*RedisBackend, error) {
 
 // UseRedisBackend builds and installs a Redis-backed metrics backend using the
 // provided options.
-func UseRedisBackend(opts RedisBackendOptions) error {
+func UseRedisBackend(opts RedisBackendOptions) (*RedisBackend, error) {
 	backend, err := NewRedisBackend(opts)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	UseBackend(backend)
-	return nil
+	return backend, nil
 }
 
 func (r *RedisBackend) RecordHttpRequest(method string, path string, code int) {
